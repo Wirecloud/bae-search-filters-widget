@@ -1,3 +1,1 @@
-This widget allows you to [...]
-
-## References
+The BAE Search Filters widget is a WireCloud widget that provides the ability to choose filters to limit the type of offerings provided by a BAE instance.

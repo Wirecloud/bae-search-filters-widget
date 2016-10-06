@@ -1,7 +1,9 @@
 BAE Search Filters widget
 ======================
 
-The BAE Search Filters widget is a WireCloud widget that provides ...
+The BAE Search Filters widget is a WireCloud widget that provides the ability to choose filters to limit the type of offerings provided by a BAE instance.
+
+This is used by the [bae-browser-widget](https://github.com/Wirecloud/bae-browser-widget) to filter the offerings displayed.
 
 Build
 -----
@@ -43,27 +45,19 @@ If everything goes well, you will find a wgt file in the `dist` folder.
 
 ## Settings
 
-`Write here the preferences`
+-`Server URL`: The URL of the BAE server.
 
 ## Wiring
 
-
-### Input Endpoints
-
-`Write here the input wiring endpoints`
-
-
 ### Output Endpoints
 
-
-`Write here the output wiring endpoints`
+-`Filters`: The selected filters data.
 
 ## Usage
 
+Choose the desired filters and they will be sent through the wiring.
 
-## Reference
-
-- [FIWARE Mashup](https://mashup.lab.fiware.org/)
+This widget is created dynamically by the [bae-browser-widget](https://github.com/Wirecloud/bae-browser-widget) so it doensn't need to be added manually to the dashboard when using it.
 
 ## Copyright and License
 
