@@ -42,6 +42,14 @@
            {{ category.name }}
         </md-radio-button>
       </md-radio-group>
+
+      <md-subheader class="md-no-sticky">Filter by status</md-subheader>
+      <md-radio-group ng-model="data.status">
+        <md-radio-button class="md-primary" ng-value="">All</md-radio-button>
+        <md-radio-button class="md-primary" ng-value="status.value" ng-repeat="status in filters.status">
+           {{ status.title }}
+        </md-radio-button>
+      </md-radio-group>
     </form>
 
     <script src="js/moment.min.js"></script>

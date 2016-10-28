@@ -27,6 +27,12 @@ angular
                 offeringType: [
                     {value: 'single', title: 'Single'},
                     {value: 'bundle', title: 'Bundle'}
+                ],
+                status: [
+                    {value: "owned", title: "Owned"},
+                    {value: "not owned", title: "Not Owned"},
+                    {value: "installed", title: "Installed"},
+                    {value: "not installed", title: "Not installed"},
                 ]
             };
 
