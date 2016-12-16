@@ -6,7 +6,7 @@
  * Licensed under the Apache-2.0 license.
  */
 
-/*global MashupPlatform, angular */
+/* globals MashupPlatform, angular */
 angular
     .module('widget', ['ngMaterial', 'ngResource'])
     .controller('WidgetCtrl', function ($scope, $resource) {

@@ -1,12 +1,6 @@
 {
-  "name": "bae-search-filters",
-  "dependencies": {
-    "jquery": null
-  },
+  "name": "widgetPlantilla",
+  "dependencies": {},
   "devDependencies": {},
-  "exportsOverride": {
-    "jquery": {
-      "js": "dist/jquery.min.js"
-    }
-  }
+  "exportsOverride": {}
 }
