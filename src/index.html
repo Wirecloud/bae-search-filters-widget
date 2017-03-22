@@ -8,20 +8,12 @@
   </head>
   <body ng-app="widget">
     <form name="form" ng-controller="WidgetCtrl">
+
       <md-subheader class="md-no-sticky">Filter by offering type</md-subheader>
       <md-radio-group ng-model="data.offeringType">
         <md-radio-button class="md-primary" ng-value="">All</md-radio-button>
         <md-radio-button class="md-primary" ng-value="offeringType.value" ng-repeat="offeringType in filters.offeringType">
            {{ offeringType.title }}
-        </md-radio-button>
-      </md-radio-group>
-      <md-divider></md-divider>
-
-      <md-subheader class="md-no-sticky">Filter by MAC type</md-subheader>
-      <md-radio-group ng-model="data.macType">
-        <md-radio-button class="md-primary" ng-value="">All</md-radio-button>
-        <md-radio-button class="md-primary" ng-value="macType.value" ng-repeat="macType in filters.macType">
-           {{ macType.title }}
         </md-radio-button>
       </md-radio-group>
       <md-divider></md-divider>
@@ -40,14 +32,6 @@
         <md-radio-button class="md-primary" ng-value="">All</md-radio-button>
         <md-radio-button class="md-primary" ng-value="category.id" ng-repeat="category in filters.category">
            {{ category.name }}
-        </md-radio-button>
-      </md-radio-group>
-
-      <md-subheader class="md-no-sticky">Filter by status</md-subheader>
-      <md-radio-group ng-model="data.status">
-        <md-radio-button class="md-primary" ng-value="">All</md-radio-button>
-        <md-radio-button class="md-primary" ng-value="status.value" ng-repeat="status in filters.status">
-           {{ status.title }}
         </md-radio-button>
       </md-radio-group>
     </form>

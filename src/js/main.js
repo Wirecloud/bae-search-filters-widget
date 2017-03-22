@@ -19,31 +19,29 @@ angular
             $scope.filters = {
                 catalogue: getCatalogueList(),
                 category: getCategoryList(),
-                macType: [
-                    {value: 'wirecloud/widget', title: 'Widget'},
-                    {value: 'wirecloud/operator', title: 'Operator'},
-                    {value: 'wirecloud/mashup', title: 'Mashup'}
-                ],
                 offeringType: [
-                    {value: 'single', title: 'Single'},
-                    {value: 'bundle', title: 'Bundle'}
-                ],
-                status: [
-                    {value: "owned", title: "Owned"},
-                    {value: "not owned", title: "Not Owned"},
-                    {value: "installed", title: "Installed"},
-                    {value: "not installed", title: "Not installed"},
+                    {value: false, title: 'Single'},
+                    {value: true, title: 'Bundle'}
                 ]
             };
 
             $scope.$watchCollection('data', function () {
-                MashupPlatform.wiring.pushEvent('filters', JSON.stringify($scope.data));
+                buildFilters();
             });
 
             MashupPlatform.prefs.registerCallback(function () {
                 $scope.filters.catalogue = getCatalogueList();
                 $scope.filters.category = getCategoryList();
             });
+        };
+
+        var buildFilters = function buildFilters() {
+            var filters = {};
+            filters.isBundle = $scope.data.offeringType;
+            filters["catalogue.id"] = $scope.data.catalogueId;
+            filters["category.id"] = $scope.data.categoryId;
+
+            MashupPlatform.wiring.pushEvent('filters', filters);
         };
 
         var getCatalogueList = function getCatalogueList() {
