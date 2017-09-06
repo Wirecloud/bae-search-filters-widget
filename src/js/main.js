@@ -2,7 +2,7 @@
  * bae-search-filters
  * https://github.com/Wirecloud/bae-search-filters-widget
  *
- * Copyright (c) 2016 CoNWeT, Universidad Politécnica de Madrid
+ * Copyright (c) 2016-2017 CoNWeT, Universidad Politécnica de Madrid
  * Licensed under the Apache-2.0 license.
  */
 

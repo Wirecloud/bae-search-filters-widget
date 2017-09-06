@@ -11,7 +11,7 @@ Build
 Be sure to have installed [Node.js](http://node.js) and [Bower](http://bower.io) in your system. For example, you can install it on Ubuntu and Debian running the following commands:
 
 ```bash
-curl -sL https://deb.nodesource.com/setup | sudo bash -
+curl -sL https://deb.nodesource.com/setup | udo bash -
 sudo apt-get install nodejs
 sudo apt-get install npm
 sudo npm install -g bower
@@ -47,5 +47,5 @@ available on Read the Docs.
 
 ## Copyright and License
 
-Copyright (c) 2016 CoNWeT, Universidad Politécnica de Madrid
+Copyright (c) 2016-2017 CoNWeT, Universidad Politécnica de Madrid
 Licensed under the Apache-2.0 license.
