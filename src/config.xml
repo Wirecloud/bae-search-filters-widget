@@ -17,6 +17,7 @@
   <requirements></requirements>
   <preferences>
     <preference name="server_url" type="text" label="Server URL" description="URL of the BAE server."/>
+    <preference name="selected_category" type="text" label="Default category" description="The default category to be selected."/>
   </preferences>
   <wiring>
     <outputendpoint name="filters" type="text" label="Filters" description="JSON String. Search filters selected." friendcode="filters"/>

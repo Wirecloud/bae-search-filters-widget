@@ -16,6 +16,9 @@ angular
 
             $scope.data = {};
 
+            // Get the default category
+            $scope.defaultCat = MashupPlatform.prefs.get('selected_category');
+
             $scope.filters = {
                 catalogue: getCatalogueList(),
                 category: getCategoryList(),
@@ -36,12 +39,16 @@ angular
         };
 
         var buildFilters = function buildFilters() {
-            var filters = {};
-            filters.isBundle = $scope.data.offeringType;
-            filters["catalogue.id"] = $scope.data.catalogueId;
-            filters["category.id"] = $scope.data.categoryId;
+            // Dont send empty filters data load
+            if (Object.keys($scope.data).length > 0) {
+                var filters = {};
+                filters.isBundle = $scope.data.offeringType;
+                filters["catalogue.id"] = $scope.data.catalogueId;
+                filters["category.id"] = $scope.data.categoryId;
+                $scope.defaultCat = filters["category.id"];
 
-            MashupPlatform.wiring.pushEvent('filters', filters);
+                MashupPlatform.wiring.pushEvent('filters', filters);
+            }
         };
 
         var getCatalogueList = function getCatalogueList() {
@@ -57,6 +64,14 @@ angular
 
             return $resource(url).query({
                 lifecycleStatus: 'Launched'
+            }, function (categories) {
+                // Find the default category ID and select it
+                for (var i = 0; i < categories.length; i++) {
+                    if (categories[i].name === $scope.defaultCat) {
+                        $scope.data.categoryId = categories[i].id;
+                        break;
+                    }
+                }
             });
         };
 
